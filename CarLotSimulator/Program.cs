@@ -19,17 +19,24 @@ namespace CarLotSimulator
             //DONE Set the properties for each of the cars
             //DONE Call each of the methods for each car
 
+            Console.WriteLine($"Number of Cars created: {Carlot.numberOfCars}");
+
             var myCar = new Car();
+
+            myCar.Driver = "Graybles";
             myCar.Make = "Honda";
             myCar.Model = "Accord";
             myCar.Year = 2008;
             myCar.EngineNoise = "vroom vroom";
             myCar.HonkNoise = "beep beep";
             myCar.IsDriveable = true;
-
+        
+        
+            Console.WriteLine($"Number of Cars created: {Carlot.numberOfCars}");
 
             var stevosCar = new Car()
             {
+                Driver = "StevO!",
                 Year = 2020,
                 Make = "Tonka",
                 Model = "Super Truck",
@@ -38,20 +45,43 @@ namespace CarLotSimulator
                 IsDriveable = false
             };
 
-            var jakesCar = new Car(2001, "Ford", "Focus", "skrrrrrt", "boop boop", true);
+            Console.WriteLine($"Number of Cars created: {Carlot.numberOfCars}");
+
+            var jakesCar = new Car("Jake", 2001, "Ford", "Focus", "skrrrrrt", "boop boop", true);
+
+            Console.WriteLine($"Number of Cars created: {Carlot.numberOfCars}");
+
+            var jebsCar = new Car()
+            {
+                Driver = "J3BBY M@N3",
+                Year = 3000,
+                Make = "Mars",
+                Model = "Rover Rumbler",
+                EngineNoise = "bleep blorp",
+                HonkNoise = "Zing Zoooop!!",
+                IsDriveable = true
+                
+                
+            };
+
+            Console.WriteLine($"Number of Cars created: {Carlot.numberOfCars}");
 
 
             myCar.MakeEngineNoise(myCar.EngineNoise);
 
-            stevosCar.MakeEngineNoise(stevosCar.EngineNoise);
+            myCar.MakeHonkNoise(myCar.HonkNoise);
 
             jakesCar.MakeEngineNoise(jakesCar.EngineNoise);
 
-            myCar.MakeHonkNoise(myCar.HonkNoise);
+            jakesCar.MakeHonkNoise(jakesCar.HonkNoise);
+
+            stevosCar.MakeEngineNoise(stevosCar.EngineNoise);
 
             stevosCar.MakeHonkNoise(stevosCar.HonkNoise);
 
-            jakesCar.MakeHonkNoise(jakesCar.HonkNoise);
+            jebsCar.MakeEngineNoise(jebsCar.EngineNoise);
+
+            jebsCar.MakeHonkNoise(jebsCar.HonkNoise);
 
 
 
@@ -65,11 +95,12 @@ namespace CarLotSimulator
             carlot.carList.Add(myCar);
             carlot.carList.Add(stevosCar);
             carlot.carList.Add(jakesCar);
-
+            carlot.carList.Add(jebsCar);
+            
 
             foreach(var Car in carlot.carList)
             {
-                Console.WriteLine($"Year: {Car.Year} Make: {Car.Make} Model: {Car.Model}");
+                Console.WriteLine($"Driver: {Car.Driver} Year: {Car.Year} Make: {Car.Make} Model: {Car.Model}");
             }
             //DONE Create a CarLot class
             //DONE It should have at least one property: a List of cars
